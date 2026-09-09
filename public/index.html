@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ViChat</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <div id="loginScreen" class="screen">
+
+        <div class="login-box">
+
+            <h1>💬 ViChat</h1>
+
+            <p>Enter your unique username.</p>
+
+            <input
+                id="usernameInput"
+                type="text"
+                placeholder="Your username..."
+                maxlength="20"
+                autocomplete="off"
+            >
+
+            <button id="joinButton">
+                Join Chat
+            </button>
+
+            <p id="loginError"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHAT -->
+
+    <div id="chatScreen" class="chat-container hidden">
+
+        <aside class="sidebar">
+
+            <h2>💬 ViChat</h2>
+
+            <h3>ONLINE MEMBERS</h3>
+
+            <ul id="usersList"></ul>
+
+            <button id="videoButton">
+                📹 Join Video Chat
+            </button>
+
+        </aside>
+
+
+        <main class="chat-main">
+
+            <div class="chat-header">
+
+                <h2>Family Chat</h2>
+
+                <span id="onlineCount">
+                    0 online
+                </span>
+
+            </div>
+
+
+            <div id="messages" class="messages"></div>
+
+
+            <div class="message-input">
+
+                <input
+                    id="messageInput"
+                    type="text"
+                    placeholder="Write a message..."
+                    autocomplete="off"
+                >
+
+                <button id="sendButton">
+                    Send
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- VIDEO -->
+
+    <div id="videoScreen" class="video-screen hidden">
+
+        <div class="video-header">
+
+            <h2>📹 Family Video Chat</h2>
+
+            <button id="closeVideoButton">
+                ✕ Leave
+            </button>
+
+        </div>
+
+
+        <div id="videoGrid" class="video-grid">
+
+            <!-- Videos are added here -->
+
+        </div>
+
+
+        <div class="video-controls">
+
+            <button id="muteButton">
+                🎤 Mute
+            </button>
+
+            <button id="cameraButton">
+                📷 Camera Off
+            </button>
+
+            <button id="leaveVideoButton">
+                🔴 Leave Call
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
